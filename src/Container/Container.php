@@ -2,7 +2,7 @@
 
 namespace SevenFields\Container;
 
-use SevenFields\Fields;
+use SevenFields\Fields\Fields;
 
 class Container {
 
@@ -96,7 +96,7 @@ class Container {
    * @return
    */
   public function enqueue_scripts() {
-    wp_enqueue_style( 'seven-fields-styles', \SevenFields\URL . '/assets/css/styles', array(), \SevenFields\VERSION );
+    wp_enqueue_style( 'seven-fields-styles', \SevenFields\URL . '/assets/css/styles.css', array(), \SevenFields\VERSION );
   }
   
   /**
