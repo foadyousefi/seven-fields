@@ -3,6 +3,7 @@
 namespace SevenFields\Container;
 
 use SevenFields\Fields\Fields;
+use SevenFields\Bootstrap\Bootstrap;
 
 class Container {
 
