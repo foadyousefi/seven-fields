@@ -96,7 +96,7 @@ class Container {
    * @return
    */
   public function enqueue_scripts() {
-    wp_enqueue_style( 'carbon-fields-boot', \SevenFields\URL . '/assets/css/styles', array(), \SevenFields\VERSION );
+    wp_enqueue_style( 'seven-fields-styles', \SevenFields\URL . '/assets/css/styles', array(), \SevenFields\VERSION );
   }
   
   /**
