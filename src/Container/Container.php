@@ -48,7 +48,8 @@ class Container {
    * @return
    */
   public function __construct($page_title, $menu_slug = null) {
-    add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+    // Initiate bootstrap
+    new Bootstrap;
     $this->page_title = $page_title;
     $this->menu_slug = isset( $menu_slug ) ? $menu_slug : str_replace(' ','-', strtolower( $page_title ) );
     $this->options_group = str_replace('-','_', $this->menu_slug ) . '_options';
@@ -86,17 +87,6 @@ class Container {
       );
     }
     return $this;
-  }
-  
-  /**
-   * Enqueue style and scripts for backend.
-   *
-   * @since 0.1.0
-   * @param
-   * @return
-   */
-  public function enqueue_scripts() {
-    wp_enqueue_style( 'seven-fields-styles', \SevenFields\URL . '/assets/css/styles.css', array(), \SevenFields\VERSION );
   }
   
   /**
