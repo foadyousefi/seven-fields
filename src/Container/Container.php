@@ -37,6 +37,16 @@ class Container {
 	 */
   public $fields_callback;
 
+	/**
+	 * @param object $icon
+	 */
+  public $icon;
+
+	/**
+	 * @param object $position
+	 */
+  public $position = 99;
+
   public static function make($page_title, $menu_slug = null) {
     return new Container($page_title, $menu_slug);
   }
@@ -54,9 +64,7 @@ class Container {
     $this->page_title = $page_title;
     $this->menu_slug = isset( $menu_slug ) ? $menu_slug : str_replace(' ','-', strtolower( $page_title ) );
     $this->options_group = str_replace('-','_', $this->menu_slug ) . '_options';
-    $this->options_name = str_replace('-','_', $this->menu_slug );
-    // add_action( 'admin_menu', array( $this, 'add_page' ) );
-    
+    $this->options_name = str_replace('-','_', $this->menu_slug );    
   }
   
   /**
@@ -84,7 +92,8 @@ class Container {
         'manage_options',
         $this->menu_slug,
         array( $this, 'page' ),
-        $icon_url = 'dashicons-search'
+        $this->icon,
+        $this->position
       );
     }
     return $this;
@@ -99,6 +108,30 @@ class Container {
    */
   public function set_parent( $parent ) {
     $this->parent_slug = $parent;
+    return $this;
+  }
+  
+  /**
+   * Set page icon.
+   *
+   * @since 0.1.0
+   * @param
+   * @return
+   */
+  public function set_icon( $icon ) {
+    $this->icon = $icon;
+    return $this;
+  }
+  
+  /**
+   * Set page menu position.
+   *
+   * @since 0.1.0
+   * @param
+   * @return
+   */
+  public function set_menu_position( $position ) {
+    $this->position = $position;
     return $this;
   }
 
