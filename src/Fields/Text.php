@@ -70,10 +70,10 @@ class Text extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field text-field">
-      <div class="label"><?php esc_html_e( self::$label, 'seven-fields' ); ?></div>
+      <div class="label"><?php _e( self::$label, 'seven-fields' ); ?></div>
       <input type="text" name="<?php echo self::input_name() ?>"
             value="<?php echo esc_attr( self::get_value() ); ?>" />
-      <span class="desc"><?php esc_html_e( self::$description, 'seven-fields' ); ?></span>
+      <span class="desc"><?php _e( self::$description, 'seven-fields' ); ?></span>
     </div>
     <?php
   }

@@ -70,12 +70,12 @@ class Checkbox extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field checkbox">
-      <div class="label"><?php esc_html_e( self::$label, 'seven-fields' ); ?></div>
+      <div class="label"><?php _e( self::$label, 'seven-fields' ); ?></div>
       <label>
         <input type="checkbox"
               name="<?php echo self::input_name(); ?>"
               <?php checked( self::get_value() ); ?> />
-        <?php esc_html_e( self::$description, 'seven-fields' ); ?>
+        <?php _e( self::$description, 'seven-fields' ); ?>
       </label>
     </div>
     <?php

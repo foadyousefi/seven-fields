@@ -39,8 +39,8 @@ class Header extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field header">
-      <h3><?php esc_html_e( self::$label, 'seven-fields' ); ?></h3>
-      <span class="desc"><?php esc_html_e( self::$description, 'seven-fields' ); ?></span>
+      <h3><?php _e( self::$label, 'seven-fields' ); ?></h3>
+      <span class="desc"><?php _e( self::$description, 'seven-fields' ); ?></span>
     </div>
     <?php
   }

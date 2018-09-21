@@ -71,11 +71,11 @@ class Textarea extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field textarea">
-      <div class="label"><?php esc_html_e( self::$label, 'seven-fields' ); ?></div>
+      <div class="label"><?php _e( self::$label, 'seven-fields' ); ?></div>
       <textarea
         name="<?php echo self::input_name() ?>"
         id="textarea" cols="30" rows="10"><?php echo self::get_value() ?></textarea>
-      <span class="desc"><?php esc_html_e( self::$description, 'seven-fields' ); ?></span>
+      <span class="desc"><?php _e( self::$description, 'seven-fields' ); ?></span>
     </div>
     <?php
   }

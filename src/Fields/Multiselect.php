@@ -77,7 +77,7 @@ class Multiselect extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field multiselect">
-      <div class="label"><?php esc_html_e( self::$label, 'seven-fields' ); ?></div>
+      <div class="label"><?php _e( self::$label, 'seven-fields' ); ?></div>
       <div class="options">
         <?php
           foreach ( self::$options as $key => $value) {
@@ -87,14 +87,14 @@ class Multiselect extends Fields {
                   <input type="checkbox"
                         name="<?php echo self::input_name() ?>[<?php echo $value ?>]"
                         <?php echo ( isset( self::get_value()[ $value] ) && self::get_value()[ $value] == 'on' ) ? 'checked="checked"' : '' ?> />
-                  <?php esc_html_e( $value, 'seven-fields' ); ?>
+                  <?php _e( $value, 'seven-fields' ); ?>
                 </label>
               </p>
             <?php
           }
         ?>
       </div>
-      <span class="desc"><?php esc_html_e( self::$description, 'seven-fields' ); ?></span>
+      <span class="desc"><?php _e( self::$description, 'seven-fields' ); ?></span>
     </div>
     <?php
   }

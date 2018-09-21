@@ -39,7 +39,7 @@ class Html extends Fields {
   public function field_html() {
     ?>
     <div class="seven-field header">
-      <h3><?php esc_html_e( self::$label, 'seven-fields' ); ?></h3>
+      <h3><?php _e( self::$label, 'seven-fields' ); ?></h3>
       <?php echo self::$content; ?>
     </div>
     <?php

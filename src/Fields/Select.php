@@ -67,12 +67,12 @@ class Select extends Fields {
   public function field_html() {
     ?>
       <div class="seven-field text-field">
-        <div class="label"><?php esc_html_e( self::$label, 'seven-fields' ); ?></div>
+        <div class="label"><?php _e( self::$label, 'seven-fields' ); ?></div>
         <select name="<?php echo self::input_name() ?>">
           <?php
           foreach ( self::$options as $key => $value ) { ?>
             <option value="<?php echo esc_attr( $key ); ?>" <?php selected( self::get_value(), $key, true ); ?>>
-              <?php echo esc_html_e( strip_tags( $value ), 'seven-fields' ); ?>
+              <?php echo _e( strip_tags( $value ), 'seven-fields' ); ?>
             </option>
           <?php } ?>
         </select>
