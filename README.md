@@ -43,4 +43,13 @@ function add_fields_to_the_page() {
   }
 ```
 
+### How to read options?
+
+To read options from database, you can somply use wordpress [`get_option()`](https://developer.wordpress.org/reference/functions/get_option/) function by passing the optoin name and optional default value. like so:
+
+```
+get_option( 'example_text_field', 'lorem ipsum' )
+```
+
+
 I will try to update README and describe all possible options.
