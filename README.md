@@ -21,7 +21,7 @@ More fields will be added later, but til them, don't hesitate to ask for feature
 ### How to use?
 
 1- In your plugin or theme directory, run 
-`composer require htmlburger/carbon-fields`
+`composer require foadyousefi/seven-fields`
 
 2- In your functions.php or your plugin write:
 ```
