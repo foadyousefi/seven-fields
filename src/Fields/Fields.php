@@ -10,7 +10,7 @@ class Fields {
   public static $options_group;
 
 	/**
-	 * @param object $option_name
+	 * @param object $options_name
 	 */
   public static $options_name;
 
@@ -63,7 +63,7 @@ class Fields {
    */
   public static function save( $name, $type ){
     if ( isset( $_REQUEST ) && isset( $_REQUEST['_wpnonce'] ) && wp_verify_nonce( $_REQUEST['_wpnonce'], 'wprds_nonce_check' ) == 1 ) {
-      $post_data = $_REQUEST['wp_redisearch'];
+      $post_data = $_REQUEST[ self::$options_name ];
       $value = isset( $post_data[ $name ] ) ? $post_data[ $name ] : null;
       switch ( $type ) {
         case 'text':
