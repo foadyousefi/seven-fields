@@ -38,6 +38,11 @@ class Container {
   public $fields_callback;
 
 	/**
+	 * @param object $plain_page
+	 */
+  public $plain_page = false;
+
+	/**
 	 * @param object $icon
 	 */
   public $icon;
@@ -122,6 +127,18 @@ class Container {
     $this->icon = $icon;
     return $this;
   }
+
+  /**
+   * Disable form actions and output the page as plain html page.
+   *
+   * @since 0.1.0
+   * @param
+   * @return
+   */
+  public function plain_page() {
+    $this->plain_page = true;
+    return $this;
+  }
   
   /**
    * Set page menu position.
@@ -157,23 +174,26 @@ class Container {
     ?>
     <div class="wrap">
       <h1><?php esc_html_e( $this->page_title, 'seven-fields' ); ?></h1>
-      <form method="post">
-        <div id="poststuff">
-			    <div id="post-body" class="metabox-holder columns-2 seven-form-wraper">
-				    <div id="post-body-content">
-					    <div class="postbox " style="display: block;">
-                <?php
-                wp_nonce_field( 'wprds_nonce_check' );
-                Fields::make( $this->options_group, $this->options_name );
-                call_user_func( $this->fields_callback );
-                ?>
-					    </div>
-            </div>
-        
-            <div id="postbox-container-1" class="postbox-container">
+      <?php if ($this->plain_page) {
+        call_user_func( $this->fields_callback );
+      } else { ?>
+        <form method="post">
+          <div id="poststuff">
+            <div id="post-body" class="metabox-holder columns-2 seven-form-wraper">
+
+              <div id="post-body-content">
+                <div class="postbox " style="display: block;">
+                  <?php
+                  wp_nonce_field( 'wprds_nonce_check' );
+                  Fields::make( $this->options_group, $this->options_name );
+                  call_user_func( $this->fields_callback );
+                  ?>
+                </div>
+              </div>
+          
+              <div id="postbox-container-1" class="postbox-container">
                 <div id="submitdiv" class="postbox">
                   <h3><?php esc_html_e('Actions', 'seven-fields'); ?></h3>
-
                   <div id="major-publishing-actions">
 
                     <div id="publishing-action">
@@ -184,10 +204,12 @@ class Container {
                   </div>
                 </div>
               </div>
+
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
-  <?php
+        </form>
+      </div>
+    <?php
+    }
   }
 }
