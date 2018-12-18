@@ -14,6 +14,7 @@ So decided to write my own and after finishing, thought why not to open source i
 - Multiselect
 - Select
 - Textfield
+- Password
 - Textarea
 
 More fields will be added later, but til them, don't hesitate to ask for features and more fields by opening new issue.
@@ -37,6 +38,7 @@ function setting_pages_init() {
 function add_fields_to_the_page() {
     Fields::add('header', null, 'This is header' );
     Fields::add('text', 'example_text_field', 'This is text field', 'And this is description' );
+    Fields::add('password', 'example_password_field', 'This is password field', 'And this is description' );
     Fields::add( 'checkbox', 'example_checkbox', 'Checkbox label', 'And description' );
     Fields::add( 'textarea', 'example_text_area', 'Textarea example',  'And description. <be />New line in description with <b>bold</b> text.' );
 
