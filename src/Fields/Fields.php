@@ -67,6 +67,7 @@ class Fields {
       $value = isset( $post_data[ $name ] ) ? $post_data[ $name ] : null;
       switch ( $type ) {
         case 'text':
+        case 'password':
           update_option( $name, sanitize_text_field( $value ) );
           break;
         case 'textarea':
