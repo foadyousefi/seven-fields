@@ -38,6 +38,8 @@ class Select extends Fields {
     self::$label = $label;
     self::$description = $description;
     self::$options = $options;
+    // Save value in as wp_option in database
+    parent::save( self::$name, 'select' );
     return $this->field_html();
   }
 

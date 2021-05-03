@@ -76,6 +76,9 @@ class Fields {
         case 'multiselect':
           update_option( $name, $value );
           break;
+        case 'select':
+          update_option( $name, $value );
+          break;
         case 'checkbox':
           $value = isset( $value ) ? true : false;
           update_option( $name, $value );
